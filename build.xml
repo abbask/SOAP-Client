@@ -1,0 +1,21 @@
+<project>
+    <target name="clean">
+        <delete dir="classes"/>
+    </target>
+    <target name="compile">
+        <mkdir dir="classes/"/>
+        <javac srcdir="./src" destdir="classes/">
+	  <classpath>
+	    <pathelement path="output"/>
+	  </classpath>
+	</javac>
+    </target>
+    <target name="run">
+        <java classname="WeatherClient.class">
+	  <classpath>
+            <pathelement path="classes"/>
+	    <pathelement path="output:"/>
+          </classpath>
+	</java>	
+    </target>
+</project>
